@@ -5,7 +5,7 @@ _start:
 
 movq $0x11676e6f306f306f, %rbx
 shl $0x8, %rbx
-shr $0x8, %rbx
+shr $0x8, %rbx  ; $0x11676e6f306f306f -> 0x00676e6f306f306f
 pushq %rbx
 movq $0x306f306f306f306f, %rbx
 pushq %rbx
