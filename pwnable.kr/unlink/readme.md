@@ -34,8 +34,8 @@ ret
 ```
 Payload = shell address (4 bytes) + dummy (12 bytes) + [FD] heap address + 0xc (4 bytes) + [BK] stack address + 0x10
 ```
-FD인 heap address + 0xc인 이유는 ecx에 담겨진 값이 - 4 가 되며, 그로 인해 FD - 4 를 참조하게 된다.
-그렇기에 shell 주소를 가지고 있는 주소는 heap으로부터 + 0x8 이니, + 0x4를 더하여 ecx - 4 를 커버해준다.
+FD인 heap address + 0xc인 이유는 ecx에 담겨진 값이 - 4 가 되며, 그로 인해 esp는 FD - 4 를 참조하게 된다.
+그렇기에 shell 주소를 가지고 있는 주소는 heap으로부터 + 0x8 이니, 0x4를 더하여 ecx - 4 를 커버해준다.
 최종적으로 esp에는 heap address + 0x8이 들어가게 된다.
 
 BK의 stack address + 0x10인 이유는 최초 ebp의 값이 문제에서 주어지는 스택 주소 + 0x14이다.
