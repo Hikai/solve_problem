@@ -15,7 +15,7 @@ pwnable.kr 에서 소스를 제공하니 다음과 같이 주소를 찍어보면
 ...
 memcpy(cache1, cache2, 0x4000);		// to eliminate cache effect
 t1 = rdtsc();
-printf("src: %p, dest: %p\n", src, dest);
+printf("src: %p, dest: %p\n", src, dest); // Added source code.
 fast_memcpy(dest, src, size);		// block-to-block memcpy
 t2 = rdtsc();
 printf("ellapsed CPU cycles for fast_memcpy : %llu\n", t2-t1);
